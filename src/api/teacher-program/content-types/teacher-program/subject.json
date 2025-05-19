@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_shared_subjects",
+  "info": {
+    "displayName": "Subject",
+    "description": "A subject within a teacher program"
+  },
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "notes": {
+      "type": "text"
+    }
+  }
+}
