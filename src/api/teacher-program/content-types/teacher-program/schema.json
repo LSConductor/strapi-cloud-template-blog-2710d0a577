@@ -1,0 +1,42 @@
+{
+  "collectionName": "teacher_programs",
+  "info": {
+    "singularName": "teacher-program",
+    "pluralName": "teacher-programs",
+    "displayName": "Teacher Program",
+    "description": "A content type for planning and managing teacher programs"
+  },
+  "options": {
+    "draftAndPublish": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "program_title": {
+      "type": "string",
+      "required": true
+    },
+    "term": {
+      "type": "enumeration",
+      "enum": ["T1 Identity", "T2 Nature", "T3 Life & Living", "T4 Civilisation", "T5 Phenomena", "T6 Service"],
+      "default": "T1 Identity"
+    },
+    "overview": {
+      "type": "richtext"
+    },
+    "subjects": {
+      "type": "component",
+      "repeatable": true,
+      "component": "program.subject"
+    },
+    "assessment_plan": {
+      "type": "component",
+      "repeatable": false,
+      "component": "program.assessment-plan"
+    },
+    "owner": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "plugin::users-permissions.user"
+    }
+  }
+}
