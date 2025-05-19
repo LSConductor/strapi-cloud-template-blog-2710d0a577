@@ -4,11 +4,10 @@
     "singularName": "teacher-program",
     "pluralName": "teacher-programs",
     "displayName": "Teacher Program",
-    "description": "A content type for planning and managing teacher programs"
+    "description": "A unit overview and term planner"
   },
   "options": {
-    "draftAndPublish": true,
-    "timestamps": true
+    "draftAndPublish": true
   },
   "attributes": {
     "program_title": {
@@ -17,8 +16,8 @@
     },
     "term": {
       "type": "enumeration",
-      "enum": ["T1 Identity", "T2 Nature", "T3 Life & Living", "T4 Civilisation", "T5 Phenomena", "T6 Service"],
-      "default": "T1 Identity"
+      "enum": ["Term 1", "Term 2", "Term 3", "Term 4"],
+      "default": "Term 1"
     },
     "overview": {
       "type": "richtext"
@@ -26,12 +25,10 @@
     "subjects": {
       "type": "component",
       "repeatable": true,
-      "component": "program.subject"
+      "component": "shared.subject"
     },
     "assessment_plan": {
-      "type": "component",
-      "repeatable": false,
-      "component": "program.assessment-plan"
+      "type": "json"
     },
     "owner": {
       "type": "relation",
